@@ -14,10 +14,12 @@ while (input !== 'stop' && input !== 's') {
     } else if (input === 'löschen') {
         const index = parseInt(prompt('Ok, schreibe den Index zum Löschen:'));
         if (!Number.isNaN(index)) {
-            const deleted = todo.splice(index, 1);
-            console.log(`Ok, wurde gelöscht ${deleted[0]}`);
+            if (!Number > todos.length) {
+                const deletes = todos.splice(index, 1);
+                console.log(`${deletes[0]} was deleted`);
+            } else { console.log("Invalid Index") }
         } else {
-            console.log('Unknown index')
+            console.log("Unknown Index");
         }
     }
     input = prompt('Was willst du noch tun?')
